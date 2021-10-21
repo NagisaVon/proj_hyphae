@@ -84,14 +84,14 @@ color rColor() {
 int maxLvl = 500;
 float minWidth = 1;
 float thresPLS = 10; // threshold of Large and Small node for probability 
-float pBranchL = 0.3; // probability of branching
-float pBranchS = 0.15; // probability of branching 
+float pBranchL = 0.7; // probability of branching
+float pBranchS = 0.05; // probability of branching 
 float dist = 0.7; // distance between two node, mutiple by w
 float thresWidLS = 10; // threshold of Large and Small node for width 
 float bWRedL = 0.6; // width reduce when branching, by percentage, and width is large
 float bWRedS = 0.95; // width reduce when branching, by percentage, and width is small
 float bSplit =  PI/6; // new branch angle
-float wiggle = 0.5; 
+float wiggle = 0.3; 
 float startWidth = 13;
 color bgColor = color(255);
 
@@ -105,12 +105,15 @@ void setup () {
   size(1000, 1000);
   colorMode(RGB);
   background(bgColor);
-  
+  frameRate(300);
+
   // walls 
   noStroke();
   fill(200);
   rect(0,0,1000,1000);
-  fill(255);
+
+  // center area
+  fill(bgColor);
   rectMode(CENTER);
   rect( width/2, height/2, 600,900);
   
@@ -118,7 +121,7 @@ void setup () {
   // here I am implementing a custom stack
   sHead = 0;
   sTail = 0;
-  // generating the root 
+  // generate the root 
   hyphae[sHead] = new node(random(2*PI), startWidth, width/2, height/2, wiggle, 0, rColor(), null);
 }
 
@@ -126,8 +129,8 @@ void draw() {
   
   // generate new nodes
   // if last cicle generated branch 
-  println(sHead, " ", sTail);
   node curNode = hyphae[sHead];
+  
   curNode.generate();
   curNode.show();
   // has a child 
@@ -138,6 +141,11 @@ void draw() {
     hyphae[++sTail] = curNode.branch;
   }
   sHead ++;
+  if(sHead > sTail) {
+    // end of drawing
+    noLoop();
+    takeScreenShot();
+  }
 }
 
 void mousePressed(){
