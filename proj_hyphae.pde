@@ -83,14 +83,14 @@ color rColor() {
 
 int maxLvl = 500;
 float minWidth = 1;
-float thresPLS = 10; // threshold of Large and Small node for probability 
-float pBranchL = 0.7; // probability of branching
-float pBranchS = 0.05; // probability of branching 
-float dist = 0.7; // distance between two node, mutiple by w
+float thresPLS = 9; // threshold of Large and Small node for probability 
+float pBranchL = 0.3; // probability of branching
+float pBranchS = 0.15; // probability of branching 
+float dist = 0.5; // distance between two node, mutiple by w
 float thresWidLS = 10; // threshold of Large and Small node for width 
 float bWRedL = 0.6; // width reduce when branching, by percentage, and width is large
-float bWRedS = 0.95; // width reduce when branching, by percentage, and width is small
-float bSplit =  PI/6; // new branch angle
+float bWRedS = 0.9; // width reduce when branching, by percentage, and width is small
+float bSplit =  PI/3; // new branch angle
 float wiggle = 0.3; 
 float startWidth = 13;
 color bgColor = color(255);
@@ -114,15 +114,20 @@ void setup () {
 
   // center area
   fill(bgColor);
-  rectMode(CENTER);
-  rect( width/2, height/2, 600,900);
+  circle(width/2, height/2, 600);
+  //rectMode(CENTER);
+  //rect( width/2, height/2, 600,900);
   
   // system stack will only draw after all stack returns 
   // here I am implementing a custom stack
-  sHead = 0;
-  sTail = 0;
+  
   // generate the root 
-  hyphae[sHead] = new node(random(2*PI), startWidth, width/2, height/2, wiggle, 0, rColor(), null);
+  hyphae[0] = new node(0, startWidth, width/2-50, height/2-50, wiggle, 0, rColor(), null);
+  hyphae[1] = new node(PI, startWidth, width/2+50, height/2+50, wiggle, 0, rColor(), null);
+  //hyphae[sHead] = new node(random(2*PI), startWidth, width/2, height/2, wiggle, 0, rColor(), null);
+
+  sHead = 0;
+  sTail = 1;
 }
 
 void draw() {
