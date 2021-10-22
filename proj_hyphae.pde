@@ -24,9 +24,14 @@ class node {
   
   void show() {
     colorMode(HSB, maxLvl);
-    stroke(color(hue(col), maxLvl-l*2, maxLvl*2/3));
+    stroke(color(hue(col), maxLvl-l*4, maxLvl*2/3));
     strokeWeight(w);
     if ( parent != null ) {
+      line(parent.x, parent.y, x, y);
+      // a liner color
+      colorMode(RGB);
+      stroke(255);
+      strokeWeight(w/2);
       line(parent.x, parent.y, x, y);
     }else {
       point(x, y); // for the rt node who doesn't have a parent

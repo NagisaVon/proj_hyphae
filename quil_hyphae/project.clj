@@ -5,6 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [quil "4.0.0-SNAPSHOT-1"]])
+
    ; only version after 4.0.0 support jdk 9 and beyond
    ; also do not add (main "MAIN-FUNC.core") or REPL won't start
    ; INSTRUCTION: to create new quil project: 
