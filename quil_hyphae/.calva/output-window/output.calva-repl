@@ -18,168 +18,641 @@
 clj꞉user꞉>  ; Use `alt+enter` to evaluate
 ; Jack-in done.
 clj꞉user꞉> 
+#'quil-hyphae.core/start-width
+clj꞉quil-hyphae.core꞉> 
+; Syntax error compiling at (src/quil_hyphae/quil-hyphae.clj:122:1).
+; Unable to resolve symbol: defn in this context
+clj꞉quil-hyphae.core꞉> 
+; Syntax error compiling at (src/quil_hyphae/quil-hyphae.clj:127:3).
+; Unable to resolve symbol: let in this context
+clj꞉quil-hyphae.core꞉> 
 #'quil-hyphae.core/quil-hyphae
 clj꞉quil-hyphae.core꞉> 
-; Execution error (IllegalStateException) at quil-hyphae.core/eval8230 (form-init13850036280506625186.clj:34).
-; Can't pop empty list
+#'quil-hyphae.core/quil-hyphae
 clj꞉quil-hyphae.core꞉> 
-#'quil-hyphae.core/empty-hyphae
+{:stack ({:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child nil, :branch nil, :direction 0}), :length 1}
+{:stack ({:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child nil, :branch nil, :direction 0}), :length 1}
+{:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child {:y 251.92088140547276, :parent {:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child nil, :branch nil, :direction 0}, :width 13, :level 1, :wiggle 0.3, :x 256.20968732237816, :child nil, :branch nil, :direction 0.30000001192092896}, :branch nil, :direction 0}
+{:stack (), :length 2}
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$show_node invokeStatic form-init3210470029827494276.clj 88]}]
+ :trace
+ [[quil_hyphae.core$show_node invokeStatic form-init3210470029827494276.clj 88]
+  [quil_hyphae.core$show_node invoke form-init3210470029827494276.clj 86]
+  [quil_hyphae.core$draw_state invokeStatic form-init3210470029827494276.clj 128]
+  [quil_hyphae.core$draw_state invoke form-init3210470029827494276.clj 122]
+  [clojure.lang.Var invoke Var.java 384]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 16]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic applet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw
+ nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$show_node.invokeStatic (form-init3210470029827494276.clj:88)
+    quil_hyphae.core$show_node.invoke (form-init3210470029827494276.clj:86)
+    quil_hyphae.core$draw_state.invokeStatic (form-init3210470029827494276.clj:128)
+    quil_hyphae.core$draw_state.invoke (form-init3210470029827494276.clj:122)
+    clojure.lang.Var.invoke (Var.java:384)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:16)
+    quil.middlewares.safe_fns$wrap_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.App
+let.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+{:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child {:y 245.58269375562668, :parent {:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child nil, :branch nil, :direction 0}, :width 7.8, :level 1, :wiggle 0.3, :x 254.76837572455406, :child nil, :branch nil, :direction -0.7471975684165955}, :branch {:y 256.338187456131, :parent {:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child nil, :branch nil, :direction 0}, :width 7.8, :level 1, :wiggle 0.3, :x 251.44131169468164, :child nil, :branch nil, :direction 1.3471975922584534}, :direction 0}
+{:stack ({:y 256.338187456131, :parent {:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child nil, :branch nil, :direction 0}, :width 7.8, :level 1, :wiggle 0.3, :x 251.44131169468164, :child nil, :branch nil, :direction 1.3471975922584534} {:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child nil, :branch nil, :direction 0}), :length 2}
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]}]
+ :trace
+ [[quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]
+  [quil_hyphae.core$generate_on_node invoke form-init3210470029827494276.clj 37]
+  [quil_hyphae.core$update_state invokeStatic form-init3210470029827494276.clj 112]
+  [quil_hyphae.core$update_state invoke form-init3210470029827494276.clj 111]
+  [clojure.lang.Var invoke Var.java 384]
+  [clojure.lang.Atom swap Atom.java 37]
+  [clojure.core$swap_BANG_ invokeStatic core.clj 2352]
+  [clojure.core$swap_BANG_ invoke core.clj 2345]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 13]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic a
+pplet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$generate_on_node.invokeStatic (form-init3210470029827494276.clj:39)
+    quil_hyphae.core$generate_on_node.invoke (form-init3210470029827494276.clj:37)
+    quil_hyphae.core$update_state.invokeStatic (form-init3210470029827494276.clj:112)
+    quil_hyphae.core$update_state.invoke (form-init3210470029827494276.clj:111)
+    clojure.lang.Var.invoke (Var.java:384)
+    clojure.lang.Atom.swap (Atom.java:37)
+    clojure.core$swap_BANG_.invokeStatic (core.clj:2352)
+    clojure.core$swap_BANG_.invoke (core.clj:2345)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:13)
+    quil.middlewares.safe_fns$wra
+p_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.Applet.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+{:y 256.338187456131, :parent {:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child nil, :branch nil, :direction 0}, :width 7.8, :level 1, :wiggle 0.3, :x 251.44131169468164, :child {:y 260.2268104910851, :parent {:y 256.338187456131, :parent {:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child nil, :branch nil, :direction 0}, :width 7.8, :level 1, :wiggle 0.3, :x 251.44131169468164, :child nil, :branch nil, :direction 1.3471975922584534}, :width 7.8, :level 2, :wiggle 0.3, :x 251.14363649711012, :child nil, :branch nil, :direction 1.6471976041793823}, :branch nil, :direction 1.3471975922584534}
+{:stack (), :length 3}
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$show_node invokeStatic form-init3210470029827494276.clj 88]}]
+ :trace
+ [[quil_hyphae.core$show_node invokeStatic form-init3210470029827494276.clj 88]
+  [quil_hyphae.core$show_node invoke form-init3210470029827494276.clj 86]
+  [quil_hyphae.core$draw_state invokeStatic form-init3210470029827494276.clj 128]
+  [quil_hyphae.core$draw_state invoke form-init3210470029827494276.clj 122]
+  [clojure.lang.Var invoke Var.java 384]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 16]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic applet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw
+ nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$show_node.invokeStatic (form-init3210470029827494276.clj:88)
+    quil_hyphae.core$show_node.invoke (form-init3210470029827494276.clj:86)
+    quil_hyphae.core$draw_state.invokeStatic (form-init3210470029827494276.clj:128)
+    quil_hyphae.core$draw_state.invoke (form-init3210470029827494276.clj:122)
+    clojure.lang.Var.invoke (Var.java:384)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:16)
+    quil.middlewares.safe_fns$wrap_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.App
+let.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]}]
+ :trace
+ [[quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]
+  [quil_hyphae.core$generate_on_node invoke form-init3210470029827494276.clj 37]
+  [quil_hyphae.core$update_state invokeStatic form-init3210470029827494276.clj 112]
+  [quil_hyphae.core$update_state invoke form-init3210470029827494276.clj 111]
+  [clojure.lang.Var invoke Var.java 384]
+  [clojure.lang.Atom swap Atom.java 37]
+  [clojure.core$swap_BANG_ invokeStatic core.clj 2352]
+  [clojure.core$swap_BANG_ invoke core.clj 2345]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 13]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic a
+pplet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$generate_on_node.invokeStatic (form-init3210470029827494276.clj:39)
+    quil_hyphae.core$generate_on_node.invoke (form-init3210470029827494276.clj:37)
+    quil_hyphae.core$update_state.invokeStatic (form-init3210470029827494276.clj:112)
+    quil_hyphae.core$update_state.invoke (form-init3210470029827494276.clj:111)
+    clojure.lang.Var.invoke (Var.java:384)
+    clojure.lang.Atom.swap (Atom.java:37)
+    clojure.core$swap_BANG_.invokeStatic (core.clj:2352)
+    clojure.core$swap_BANG_.invoke (core.clj:2345)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:13)
+    quil.middlewares.safe_fns$wra
+p_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.Applet.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]}]
+ :trace
+ [[quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]
+  [quil_hyphae.core$generate_on_node invoke form-init3210470029827494276.clj 37]
+  [quil_hyphae.core$update_state invokeStatic form-init3210470029827494276.clj 112]
+  [quil_hyphae.core$update_state invoke form-init3210470029827494276.clj 111]
+  [clojure.lang.Var invoke Var.java 384]
+  [clojure.lang.Atom swap Atom.java 37]
+  [clojure.core$swap_BANG_ invokeStatic core.clj 2352]
+  [clojure.core$swap_BANG_ invoke core.clj 2345]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 13]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic a
+pplet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$generate_on_node.invokeStatic (form-init3210470029827494276.clj:39)
+    quil_hyphae.core$generate_on_node.invoke (form-init3210470029827494276.clj:37)
+    quil_hyphae.core$update_state.invokeStatic (form-init3210470029827494276.clj:112)
+    quil_hyphae.core$update_state.invoke (form-init3210470029827494276.clj:111)
+    clojure.lang.Var.invoke (Var.java:384)
+    clojure.lang.Atom.swap (Atom.java:37)
+    clojure.core$swap_BANG_.invokeStatic (core.clj:2352)
+    clojure.core$swap_BANG_.invoke (core.clj:2345)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:13)
+    quil.middlewares.safe_fns$wra
+p_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.Applet.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]}]
+ :trace
+ [[quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]
+  [quil_hyphae.core$generate_on_node invoke form-init3210470029827494276.clj 37]
+  [quil_hyphae.core$update_state invokeStatic form-init3210470029827494276.clj 112]
+  [quil_hyphae.core$update_state invoke form-init3210470029827494276.clj 111]
+  [clojure.lang.Var invoke Var.java 384]
+  [clojure.lang.Atom swap Atom.java 37]
+  [clojure.core$swap_BANG_ invokeStatic core.clj 2352]
+  [clojure.core$swap_BANG_ invoke core.clj 2345]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 13]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic a
+pplet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$generate_on_node.invokeStatic (form-init3210470029827494276.clj:39)
+    quil_hyphae.core$generate_on_node.invoke (form-init3210470029827494276.clj:37)
+    quil_hyphae.core$update_state.invokeStatic (form-init3210470029827494276.clj:112)
+    quil_hyphae.core$update_state.invoke (form-init3210470029827494276.clj:111)
+    clojure.lang.Var.invoke (Var.java:384)
+    clojure.lang.Atom.swap (Atom.java:37)
+    clojure.core$swap_BANG_.invokeStatic (core.clj:2352)
+    clojure.core$swap_BANG_.invoke (core.clj:2345)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:13)
+    quil.middlewares.safe_fns$wra
+p_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.Applet.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]}]
+ :trace
+ [[quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]
+  [quil_hyphae.core$generate_on_node invoke form-init3210470029827494276.clj 37]
+  [quil_hyphae.core$update_state invokeStatic form-init3210470029827494276.clj 112]
+  [quil_hyphae.core$update_state invoke form-init3210470029827494276.clj 111]
+  [clojure.lang.Var invoke Var.java 384]
+  [clojure.lang.Atom swap Atom.java 37]
+  [clojure.core$swap_BANG_ invokeStatic core.clj 2352]
+  [clojure.core$swap_BANG_ invoke core.clj 2345]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 13]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic a
+pplet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$generate_on_node.invokeStatic (form-init3210470029827494276.clj:39)
+    quil_hyphae.core$generate_on_node.invoke (form-init3210470029827494276.clj:37)
+    quil_hyphae.core$update_state.invokeStatic (form-init3210470029827494276.clj:112)
+    quil_hyphae.core$update_state.invoke (form-init3210470029827494276.clj:111)
+    clojure.lang.Var.invoke (Var.java:384)
+    clojure.lang.Atom.swap (Atom.java:37)
+    clojure.core$swap_BANG_.invokeStatic (core.clj:2352)
+    clojure.core$swap_BANG_.invoke (core.clj:2345)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:13)
+    quil.middlewares.safe_fns$wra
+p_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.Applet.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]}]
+ :trace
+ [[quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]
+  [quil_hyphae.core$generate_on_node invoke form-init3210470029827494276.clj 37]
+  [quil_hyphae.core$update_state invokeStatic form-init3210470029827494276.clj 112]
+  [quil_hyphae.core$update_state invoke form-init3210470029827494276.clj 111]
+  [clojure.lang.Var invoke Var.java 384]
+  [clojure.lang.Atom swap Atom.java 37]
+  [clojure.core$swap_BANG_ invokeStatic core.clj 2352]
+  [clojure.core$swap_BANG_ invoke core.clj 2345]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 13]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic a
+pplet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$generate_on_node.invokeStatic (form-init3210470029827494276.clj:39)
+    quil_hyphae.core$generate_on_node.invoke (form-init3210470029827494276.clj:37)
+    quil_hyphae.core$update_state.invokeStatic (form-init3210470029827494276.clj:112)
+    quil_hyphae.core$update_state.invoke (form-init3210470029827494276.clj:111)
+    clojure.lang.Var.invoke (Var.java:384)
+    clojure.lang.Atom.swap (Atom.java:37)
+    clojure.core$swap_BANG_.invokeStatic (core.clj:2352)
+    clojure.core$swap_BANG_.invoke (core.clj:2345)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:13)
+    quil.middlewares.safe_fns$wra
+p_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.Applet.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+#'quil-hyphae.core/update-state
 clj꞉quil-hyphae.core꞉> 
-()
+#'quil-hyphae.core/update-state
 clj꞉quil-hyphae.core꞉> 
-#'quil-hyphae.core/empty-hyphae
-clj꞉quil-hyphae.core꞉> 
-(4)
+#'quil-hyphae.core/generate-on-node
 clj꞉quil-hyphae.core꞉> 
 #'quil-hyphae.core/show-node
 clj꞉quil-hyphae.core꞉> 
-{:a 1 :b 2}
-{:a 1, :b 2}
+#'quil-hyphae.core/setup
 clj꞉quil-hyphae.core꞉> 
-(({:a 1 :b 2} :a) :a)
-1
+#'quil-hyphae.core/update-state
 clj꞉quil-hyphae.core꞉> 
-(:a ({:a 1 :b 2} :a))
-nil
-clj꞉quil-hyphae.core꞉> 
-(:a {:a 1 :b 2} )
-1
+#'quil-hyphae.core/draw-state
 clj꞉quil-hyphae.core꞉> 
 #'quil-hyphae.core/quil-hyphae
 clj꞉quil-hyphae.core꞉> 
-(def map1 {:a 1 :b 2})
-#'gp.conway/map1
-clj꞉gp.conway꞉> 
-nil
-clj꞉quil-hyphae.core꞉> map1
-; Syntax error compiling at (.calva/output-window/output.calva-repl:1:7704).
-; Unable to resolve symbol: map1 in this context
-clj꞉quil-hyphae.core꞉> 
-(def map1 {:a 1 :b 2})
-#'quil-hyphae.core/map1
-clj꞉quil-hyphae.core꞉> 
-map1
-{:a 1, :b 2}
-clj꞉quil-hyphae.core꞉> 
-(update map1 :a 3 :b 5)
-; Execution error (ClassCastException) at quil-hyphae.core/eval8269 (form-init13850036280506625186.clj:64).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉quil-hyphae.core꞉> 
-(update map1 :a 3)
-; Execution error (ClassCastException) at quil-hyphae.core/eval8271 (form-init13850036280506625186.clj:68).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉quil-hyphae.core꞉> 
-map1
-{:a 1, :b 2}
-clj꞉quil-hyphae.core꞉> 
-(update map1 :a inc:b dec)
-; Syntax error compiling at (.calva/output-window/output.calva-repl:75:1).
-; Unable to resolve symbol: inc:b in this context
-clj꞉quil-hyphae.core꞉> 
-(update map1 :a inc :b dec)
-; Execution error (ArityException) at quil-hyphae.core/eval8274 (form-init13850036280506625186.clj:79).
-; Wrong number of args (3) passed to: clojure.core/inc
-clj꞉quil-hyphae.core꞉> 
-(update map1 :a inc)
-{:a 2, :b 2}
-clj꞉quil-hyphae.core꞉> 
-((update map1 :a inc) update :b dec)
-; Execution error (ArityException) at quil-hyphae.core/eval8278 (form-init13850036280506625186.clj:86).
-; Wrong number of args (3) passed to: clojure.lang.PersistentArrayMap
-clj꞉quil-hyphae.core꞉> 
-(update (update map1 :a inc) :b dec)
-{:a 2, :b 1}
-clj꞉quil-hyphae.core꞉> 
-(or true true true false true)
-true
-clj꞉quil-hyphae.core꞉> 
-map1
-{:a 1, :b 2}
-clj꞉quil-hyphae.core꞉> 
-(map1:a)
-; Syntax error compiling at (.calva/output-window/output.calva-repl:99:1).
-; Unable to resolve symbol: map1:a in this context
-clj꞉quil-hyphae.core꞉> 
-(map1 :a)
-1
-clj꞉quil-hyphae.core꞉> 
-map1 :a
-:a
-clj꞉quil-hyphae.core꞉> map1
-{:a 1, :b 2}
-clj꞉quil-hyphae.core꞉> 
-(assoc map1 {:a 5 :b 5})
-; Execution error (ArityException) at quil-hyphae.core/eval8291 (form-init13850036280506625186.clj:111).
-; Wrong number of args (2) passed to: clojure.core/assoc--5416
-clj꞉quil-hyphae.core꞉> 
-(merge map1 {:a 5 :b 5 :c 1 :d 1})
-{:a 5, :b 5}
-clj꞉quil-hyphae.core꞉> 
-(def map1 {:a 5 :b 5 :c 1 :d 1})
-#'quil-hyphae.core/map1
-clj꞉quil-hyphae.core꞉> 
-(merge map1 {:a 5 :b 5})
-{:a 5, :b 5, :c 1, :d 1}
-clj꞉quil-hyphae.core꞉> 
-(rand-nth [1 -1])
--1
-clj꞉quil-hyphae.core꞉> 
-(rand-nth [1 -1])
-1
-clj꞉quil-hyphae.core꞉> 
-(rand-nth [1 -1])
-1
-clj꞉quil-hyphae.core꞉> 
-(rand-nth [1 -1])
-1
-clj꞉quil-hyphae.core꞉> 
-(rand-nth [1 -1])
--1
-clj꞉quil-hyphae.core꞉> 
-(rand-nth [1 -1])
-1
-clj꞉quil-hyphae.core꞉> 
-(rand-nth [1 -1])
-1
-clj꞉quil-hyphae.core꞉> 
-{:a 1 :b (inc a)}
-; Syntax error compiling at (.calva/output-window/output.calva-repl:145:10).
-; Unable to resolve symbol: a in this context
-clj꞉quil-hyphae.core꞉> 
-{(let [kaka 1] :a (+ 1 kaka) :b (+ 2 kaka))}
-; Syntax error reading source at (REPL:149:45).
-; Map literal must contain an even number of forms
-clj꞉quil-hyphae.core꞉> 
-(let kaka:){}
-{}
-clj꞉quil-hyphae.core꞉> 
-(def t 11)
-#'quil-hyphae.core/t
-clj꞉quil-hyphae.core꞉> 
-(neg t)
-; Syntax error compiling at (.calva/output-window/output.calva-repl:159:1).
-; Unable to resolve symbol: neg in this context
-clj꞉quil-hyphae.core꞉> 
-(- t)
--11
-clj꞉quil-hyphae.core꞉> 
-(def t nil)
-#'quil-hyphae.core/t
-clj꞉quil-hyphae.core꞉> 
-t
-nil
-clj꞉quil-hyphae.core꞉> 
-(nil?? t)
-; Syntax error compiling at (.calva/output-window/output.calva-repl:172:1).
-; Unable to resolve symbol: nil?? in this context
-clj꞉quil-hyphae.core꞉> 
-(nil? t)
-true
-clj꞉quil-hyphae.core꞉> 
-(not-nil? t)
-; Syntax error compiling at (.calva/output-window/output.calva-repl:179:1).
-; Unable to resolve symbol: not-nil? in this context
-clj꞉quil-hyphae.core꞉> 
-(not(nil? t))
-false
-clj꞉quil-hyphae.core꞉> 
+{:stack ({:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child nil, :branch nil, :direction 0}), :length 1}
+{:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child {:y 251.92088140547276, :parent {:y 250.0, :parent nil, :width 13, :level 0, :wiggle 0.3, :x 250.0, :child nil, :branch nil, :direction 0}, :width 13, :level 1, :wiggle 0.3, :x 256.20968732237816, :child nil, :branch nil, :direction 0.30000001192092896}, :branch nil, :direction 0}
+{:stack (), :length 2}
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$show_node invokeStatic form-init3210470029827494276.clj 88]}]
+ :trace
+ [[quil_hyphae.core$show_node invokeStatic form-init3210470029827494276.clj 88]
+  [quil_hyphae.core$show_node invoke form-init3210470029827494276.clj 86]
+  [quil_hyphae.core$draw_state invokeStatic form-init3210470029827494276.clj 128]
+  [quil_hyphae.core$draw_state invoke form-init3210470029827494276.clj 122]
+  [clojure.lang.Var invoke Var.java 384]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 16]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic applet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw
+ nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$show_node.invokeStatic (form-init3210470029827494276.clj:88)
+    quil_hyphae.core$show_node.invoke (form-init3210470029827494276.clj:86)
+    quil_hyphae.core$draw_state.invokeStatic (form-init3210470029827494276.clj:128)
+    quil_hyphae.core$draw_state.invoke (form-init3210470029827494276.clj:122)
+    clojure.lang.Var.invoke (Var.java:384)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:16)
+    quil.middlewares.safe_fns$wrap_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.App
+let.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]}]
+ :trace
+ [[quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]
+  [quil_hyphae.core$generate_on_node invoke form-init3210470029827494276.clj 37]
+  [quil_hyphae.core$update_state invokeStatic form-init3210470029827494276.clj 112]
+  [quil_hyphae.core$update_state invoke form-init3210470029827494276.clj 111]
+  [clojure.lang.Var invoke Var.java 384]
+  [clojure.lang.Atom swap Atom.java 37]
+  [clojure.core$swap_BANG_ invokeStatic core.clj 2352]
+  [clojure.core$swap_BANG_ invoke core.clj 2345]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 13]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic a
+pplet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$generate_on_node.invokeStatic (form-init3210470029827494276.clj:39)
+    quil_hyphae.core$generate_on_node.invoke (form-init3210470029827494276.clj:37)
+    quil_hyphae.core$update_state.invokeStatic (form-init3210470029827494276.clj:112)
+    quil_hyphae.core$update_state.invoke (form-init3210470029827494276.clj:111)
+    clojure.lang.Var.invoke (Var.java:384)
+    clojure.lang.Atom.swap (Atom.java:37)
+    clojure.core$swap_BANG_.invokeStatic (core.clj:2352)
+    clojure.core$swap_BANG_.invoke (core.clj:2345)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:13)
+    quil.middlewares.safe_fns$wra
+p_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.Applet.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]}]
+ :trace
+ [[quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]
+  [quil_hyphae.core$generate_on_node invoke form-init3210470029827494276.clj 37]
+  [quil_hyphae.core$update_state invokeStatic form-init3210470029827494276.clj 112]
+  [quil_hyphae.core$update_state invoke form-init3210470029827494276.clj 111]
+  [clojure.lang.Var invoke Var.java 384]
+  [clojure.lang.Atom swap Atom.java 37]
+  [clojure.core$swap_BANG_ invokeStatic core.clj 2352]
+  [clojure.core$swap_BANG_ invoke core.clj 2345]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 13]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic a
+pplet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$generate_on_node.invokeStatic (form-init3210470029827494276.clj:39)
+    quil_hyphae.core$generate_on_node.invoke (form-init3210470029827494276.clj:37)
+    quil_hyphae.core$update_state.invokeStatic (form-init3210470029827494276.clj:112)
+    quil_hyphae.core$update_state.invoke (form-init3210470029827494276.clj:111)
+    clojure.lang.Var.invoke (Var.java:384)
+    clojure.lang.Atom.swap (Atom.java:37)
+    clojure.core$swap_BANG_.invokeStatic (core.clj:2352)
+    clojure.core$swap_BANG_.invoke (core.clj:2345)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:13)
+    quil.middlewares.safe_fns$wra
+p_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.Applet.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]}]
+ :trace
+ [[quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]
+  [quil_hyphae.core$generate_on_node invoke form-init3210470029827494276.clj 37]
+  [quil_hyphae.core$update_state invokeStatic form-init3210470029827494276.clj 112]
+  [quil_hyphae.core$update_state invoke form-init3210470029827494276.clj 111]
+  [clojure.lang.Var invoke Var.java 384]
+  [clojure.lang.Atom swap Atom.java 37]
+  [clojure.core$swap_BANG_ invokeStatic core.clj 2352]
+  [clojure.core$swap_BANG_ invoke core.clj 2345]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 13]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic a
+pplet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$generate_on_node.invokeStatic (form-init3210470029827494276.clj:39)
+    quil_hyphae.core$generate_on_node.invoke (form-init3210470029827494276.clj:37)
+    quil_hyphae.core$update_state.invokeStatic (form-init3210470029827494276.clj:112)
+    quil_hyphae.core$update_state.invoke (form-init3210470029827494276.clj:111)
+    clojure.lang.Var.invoke (Var.java:384)
+    clojure.lang.Atom.swap (Atom.java:37)
+    clojure.core$swap_BANG_.invokeStatic (core.clj:2352)
+    clojure.core$swap_BANG_.invoke (core.clj:2345)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:13)
+    quil.middlewares.safe_fns$wra
+p_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.Applet.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+Exception in  :draw  function:  #error {
+ :cause nil
+ :via
+ [{:type java.lang.NullPointerException
+   :message nil
+   :at [quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]}]
+ :trace
+ [[quil_hyphae.core$generate_on_node invokeStatic form-init3210470029827494276.clj 39]
+  [quil_hyphae.core$generate_on_node invoke form-init3210470029827494276.clj 37]
+  [quil_hyphae.core$update_state invokeStatic form-init3210470029827494276.clj 112]
+  [quil_hyphae.core$update_state invoke form-init3210470029827494276.clj 111]
+  [clojure.lang.Var invoke Var.java 384]
+  [clojure.lang.Atom swap Atom.java 37]
+  [clojure.core$swap_BANG_ invokeStatic core.clj 2352]
+  [clojure.core$swap_BANG_ invoke core.clj 2345]
+  [quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308 invoke fun_mode.cljc 13]
+  [quil.middlewares.safe_fns$wrap_fn$fn__260 invoke safe_fns.clj 8]
+  [quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318 invoke bind_output.clj 21]
+  [quil.applet$_draw invokeStatic a
+pplet.clj 216]
+  [quil.applet$_draw invoke applet.clj 214]
+  [quil.Applet draw nil -1]
+  [processing.core.PApplet handleDraw PApplet.java 2298]
+  [quil.Applet handleDraw nil -1]
+  [processing.awt.PSurfaceAWT$12 callDraw PSurfaceAWT.java 1567]
+  [processing.core.PSurfaceNone$AnimationThread run PSurfaceNone.java 354]]} 
+stacktrace:  java.lang.NullPointerException: null
+ at quil_hyphae.core$generate_on_node.invokeStatic (form-init3210470029827494276.clj:39)
+    quil_hyphae.core$generate_on_node.invoke (form-init3210470029827494276.clj:37)
+    quil_hyphae.core$update_state.invokeStatic (form-init3210470029827494276.clj:112)
+    quil_hyphae.core$update_state.invoke (form-init3210470029827494276.clj:111)
+    clojure.lang.Var.invoke (Var.java:384)
+    clojure.lang.Atom.swap (Atom.java:37)
+    clojure.core$swap_BANG_.invokeStatic (core.clj:2352)
+    clojure.core$swap_BANG_.invoke (core.clj:2345)
+    quil.middlewares.fun_mode$wrap_draw_update$quil_draw__6308.invoke (fun_mode.cljc:13)
+    quil.middlewares.safe_fns$wra
+p_fn$fn__260.invoke (safe_fns.clj:8)
+    quil.middlewares.bind_output$bind_output$iter__298__302$fn__303$fn__318.invoke (bind_output.clj:21)
+    quil.applet$_draw.invokeStatic (applet.clj:216)
+    quil.applet$_draw.invoke (applet.clj:214)
+    quil.Applet.draw (:-1)
+    processing.core.PApplet.handleDraw (PApplet.java:2298)
+    quil.Applet.handleDraw (:-1)
+    processing.awt.PSurfaceAWT$12.callDraw (PSurfaceAWT.java:1567)
+    processing.core.PSurfaceNone$AnimationThread.run (PSurfaceNone.java:354)
+
+; Syntax error compiling at (src/quil_hyphae/hello-quil.clj:26:3).
+; No such namespace: q
+clj꞉hello-quil.core꞉> 
+#'hello-quil.core/hello-quil
+clj꞉hello-quil.core꞉> 
+a

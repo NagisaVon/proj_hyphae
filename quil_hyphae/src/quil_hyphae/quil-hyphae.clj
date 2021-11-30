@@ -33,27 +33,12 @@
 ;(stack-pop hyphae)
     
 
-(defn setup []
-  (q/frame-rate 30)
-  
-  (def root-1 {:direction 0
-               :width start-width
-               :x (* q/width 0.5)
-               :y (* q/height 0.5)
-               :wiggle wiggle
-               :level 0
-               :child nil
-               :branch nil
-               :parent nil})
-  {:stack (stack-push empty-hyphae root-1)
-   :length 1})
-
 
 (defn generate-on-node [p]
 
   (if (or (> (p :level) max-level)
-          (> (p :x) q/width) (< (p :x) 0)
-          (> (p :y) q/height) (< (p :y) 0)
+          (> (p :x) (q/width)) (< (p :x) 0)
+          (> (p :y) (q/height)) (< (p :y) 0)
           (<= (p :width) min-width))
     ; return parent keep child and branch as nil 
     ; if exceed max level or out of bond or stroke is too thin
@@ -69,8 +54,8 @@
                      d-child (+ (- (p :direction) b-delta) (q/random (p :wiggle) (- (p :wiggle))))]
                  {:branch {:direction d-branch
                            :width (* (p :width) (if (> (p :width) threshold-wid) b-wred-l b-wred-s)) 
-                           :x (+ (p :x) (* (q/cos d-branch) (p :width) (p :dist)))
-                           :y (+ (p :y) (* (q/sin d-branch) (p :width) (p :dist)))
+                           :x (+ (p :x) (* (q/cos d-branch) (p :width) dist))
+                           :y (+ (p :y) (* (q/sin d-branch) (p :width) dist))
                            :wiggle (p :wiggle)
                            :level (inc (p :level))
                            :child nil
@@ -78,8 +63,8 @@
                            :parent p}
                   :child {:direction d-child
                           :width (* (p :width) (if (> (p :width) threshold-wid) b-wred-l b-wred-s))
-                          :x (+ (p :x) (* (q/cos d-child) (p :width) (p :dist)))
-                          :y (+ (p :y) (* (q/sin d-child) (p :width) (p :dist)))
+                          :x (+ (p :x) (* (q/cos d-child) (p :width) dist))
+                          :y (+ (p :y) (* (q/sin d-child) (p :width) dist))
                           :wiggle (p :wiggle)
                           :level (inc (p :level))
                           :child nil
@@ -89,8 +74,8 @@
       (merge p (let [d-child (+ (p :direction) (q/random (p :wiggle) (- (p :wiggle))))]
               {:child {:direction d-child
                         :width (p :width)
-                        :x (+ (p :x) (* (q/cos d-child) (p :width) (p :dist)))
-                        :y (+ (p :y) (* (q/sin d-child) (p :width) (p :dist)))
+                        :x (+ (p :x) (* (q/cos d-child) (p :width) dist))
+                        :y (+ (p :y) (* (q/sin d-child) (p :width) dist))
                         :wiggle (p :wiggle)
                         :level (inc (p :level))
                         :child nil
@@ -106,28 +91,50 @@
     (let [p (node :parent)]
       (q/line (p :x) (p :y) (node :x) (node :y)))))
 
-(defn draw-state [state]
-  ;(q/background bg-color) this doesn't works
-  (apply q/background bg-color)
-  (let [cur-node (stack-head (state :stack))]
-    (generate-on-node cur-node)
-    (show-node cur-node)
+
+(defn setup []
+  (q/frame-rate 1)
+
+  (def root-1 {:direction 0
+               :width start-width
+               :x (* (q/width) 0.5)
+               :y (* (q/height) 0.5)
+               :wiggle wiggle
+               :level 0
+               :child nil
+               :branch nil
+               :parent nil})
+  {:stack (stack-push empty-hyphae root-1)
+   :length 1})
+
+
+(defn update-state [state]
+  (let [cur-node (generate-on-node (stack-head (state :stack)))]
+    (println cur-node) 
     ; maybe use -> ?
     ; what should be plugin at (state :stack)
     {:stack (stack-pop (when (not (nil? (cur-node :child)))
-              (stack-push (when (not (nil? (cur-node :branch)))
-                            (stack-push (state :stack) (cur-node :branch))) (cur-node :child))))
-     :length (inc (state :length))
-    }
+                         (stack-push (when (not (nil? (cur-node :branch)))
+                                       (stack-push (state :stack) (cur-node :branch))) (cur-node :child))))
+     :length (inc (state :length))}))
+
+
+(defn draw-state [state]
+  (println state)
+  (when (> (state :length ) 5) q/no-loop)
+  ;(q/background bg-color) this doesn't works
+  (apply q/background bg-color)
+  (let [cur-node (stack-head (state :stack))]
+    (show-node cur-node)
   )
 )
   
-
 
 (q/defsketch quil-hyphae
   :title "Quil Hyphae"
   :size [500 500] 
   :setup setup
+  :update update-state
   :draw draw-state
   :features [:keep-on-top]
   :middleware [m/fun-mode])
