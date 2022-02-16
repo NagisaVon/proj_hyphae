@@ -1,0 +1,7 @@
+*.tif
+*.png
+.DS_Store
+
+seq/
+saved/
+record/
